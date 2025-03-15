@@ -5,9 +5,7 @@ using System.Collections;
 public class ScoreKeeper : MonoBehaviour
 {
     int score;
-    [SerializeField] int requiredScoreStage1 = 500;
-    [SerializeField] int requiredScoreStage2 = 5000;
-    [SerializeField] int requiredScoreStage3 = 10000;
+    [SerializeField] int requiredScoreStage = 1000;
     int currentStage;
     static ScoreKeeper instance;
     LevelManager levelManager;
@@ -85,13 +83,7 @@ public class ScoreKeeper : MonoBehaviour
         switch (currentStage)
         {
             case 1:
-                if (score >= requiredScoreStage1) levelManager.LoadStage2();
-                break;
-            case 2:
-                if (score >= requiredScoreStage2) levelManager.LoadStage3();
-                break;
-            case 3:
-                if (score >= requiredScoreStage3) levelManager.LoadWin();
+                if (score >= requiredScoreStage) levelManager.LoadWin();
                 break;
         }
     }

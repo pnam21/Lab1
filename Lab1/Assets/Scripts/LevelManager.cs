@@ -18,18 +18,6 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Stage1");
     }
 
-    public void LoadStage2()
-    {
-        scoreKeeper.SetCurrentStage(2);
-        StartCoroutine(WaitAndLoad("Stage2", delay));
-    }
-
-    public void LoadStage3()
-    {
-        scoreKeeper.SetCurrentStage(3);
-        StartCoroutine(WaitAndLoad("Stage3", delay));
-    }
-
     public void LoadMainMenu()
     {
         scoreKeeper.SetCurrentStage(0);
@@ -51,7 +39,7 @@ public class LevelManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit(); //Work for standalone builds
+        Application.Quit(); 
     }
 
     IEnumerator WaitAndLoad(string sceneName, float delay)
